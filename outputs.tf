@@ -12,3 +12,14 @@ output "random" {
   description = "Stable random number for this example"
   value       = module.this.enabled ? join("", random_integer.example[*].result) : null
 }
+
+output "name" {
+  description = "Name of the created example"
+  value       = module.this.enabled ? module.this.name : null
+}
+
+## debug
+output "this" {
+  description = "Debug for this"
+  value       = module.this.enabled ? module.this : null
+}
